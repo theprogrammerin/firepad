@@ -1,0 +1,5 @@
+{
+  "firebase": "firepad",
+  "public": "public",
+  "rules": "rules.json"
+}

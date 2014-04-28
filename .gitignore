@@ -2,6 +2,8 @@
 *.iml
 *sw?
 node_modules
+public
 
 # Jekyll stuff.
 _site
+
