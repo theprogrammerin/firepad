@@ -205,12 +205,28 @@ Check out the <a href="../examples/">examples page</a> for more embedding exampl
 
 >Attaches a callback for the given event type.
 >
->There is presently only one event, 'ready' which fires once Firepad has retrieved the initial editor contents.  You
+>There are presently only two events:
+>
+>'ready', which fires once Firepad has retrieved the initial editor contents.  You
 >must wait for this event to fire before calling any other methods.
 
 {% highlight javascript %}
     firepad.on('ready', function() {
       // Firepad is ready.
+    });
+{% endhighlight %}
+
+>and 'synced', which fires anytime Firepad's synchronization state changes. Usually
+>this is a fairly noisy channel as events are emitted as users type and the server
+>acknowledges those edits a few milliseconds later.
+
+{% highlight javascript %}
+    firepad.on('synced', function(isSynced) {
+      if (isSynced) {
+        console.log('Firepad fully synchronized with the remote server.');
+      } else {
+        console.log('Awaiting synchronization!');
+      }
     });
 {% endhighlight %}
 
