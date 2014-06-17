@@ -185,6 +185,7 @@ Check out the <a href="../examples/">examples page</a> for more embedding exampl
 >* `richTextShortcuts` (default: false) - Maps Ctrl-B to bold, etc.
 >* `userId` (default: random) - The user ID for the person editing.
 >* `userColor` (default: generated from userId) - A css color (e.g. "#ccc") for this user's cursor.
+>* `defaultText` (default: none) - Text (non-HTML) to initialize the Firepad to if no other text history is present.
 
 
 ###From Ace:
