@@ -1,3 +1,1 @@
-jekyll build --source src --destination public
-
-firebase deploy
+jekyll build --source src && firebase deploy
