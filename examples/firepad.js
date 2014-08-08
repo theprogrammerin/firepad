@@ -193,7 +193,7 @@ firepad.TextOp = (function() {
       utils.assert (typeof this.attributes === 'object');
     } else if (type === 'delete') {
       this.chars = arguments[1];
-      utils.assert(typeof this.chars === 'number');
+      utils.assert(typeof this.chars === 'string');
     } else if (type === 'retain') {
       this.chars = arguments[1];
       utils.assert(typeof this.chars === 'number');
@@ -333,10 +333,10 @@ firepad.TextOperation = (function () {
 
   // Delete a string at the current position.
   TextOperation.prototype['delete'] = function (n) {
-    if (typeof n === 'string') { n = n.length; }
-    if (typeof n !== 'number' || n < 0) {
-      throw new Error("delete expects a positive integer or a string");
-    }
+    // if (typeof n === 'string') { n = n.length; }
+    // if (typeof n !== 'number' || n < 0) {
+    //   throw new Error("delete expects a positive integer or a string");
+    // }
     if (n === 0) { return this; }
     this.baseLength += n;
     var prevOp = (this.ops.length > 0) ? this.ops[this.ops.length - 1] : null;
@@ -5180,7 +5180,7 @@ firepad.Headless = (function() {
 
     self.initializeFakeDom(function() {
       self.getDocument(function(doc) {
-        callback(firepad.SerializeHtml(doc, this.entityManager));
+        callback(firepad.SerializeHtml(doc, self.entityManager));
       });
     });
   }
